@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to She Can Foundation | NGO Registered under Indian Society Act</title>
+  
+  <!-- Prevent styling flashes in dark mode (FOUC) -->
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+
+  <!-- Style link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- --- Header / Navigation --- -->
+  <header id="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="#" class="logo" aria-label="She Can Foundation Home">
+          <img src="assets/logo.jpg" alt="She Can Foundation Logo"> She Can Foundation
+        </a>
+        
+        <!-- Navigation Links -->
+        <nav>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#impact" class="nav-link">Impact</a></li>
+            <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
+            <li><a href="certificate.html" class="nav-link">Certificate</a></li>
+            <li><a href="donate.html" class="nav-link">Donate</a></li>
+            <li><a href="#join" class="nav-link">Join Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Header Actions (Toggle & CTA) -->
+        <div class="nav-actions">
+          <button class="theme-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
+            <!-- Moon Icon for dark mode switch -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+            <!-- Sun Icon for light mode switch -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            </svg>
+          </button>
+          
+          <a href="#join" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Volunteer</a>
+          
+          <!-- Mobile Menu Burger -->
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- Hero Section --- -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--secondary-color); font-size: 0.85rem; margin-bottom: 0.5rem;">
+            NGO Registered Under the Indian Society Act, 1860
+          </p>
+          <h1>Together We Can Change <br><span>The World</span></h1>
+          <p>
+            Welcome to She Can Foundation. We don't ask for much, just help us with what you can — Be it Money, Skill, or Your Time. Every student deserves a fair chance to learn, explore, and grow.
+          </p>
+          <div class="hero-buttons">
+            <a href="#join" class="btn btn-secondary">Join Us</a>
+            <a href="#about" class="btn btn-outline">Our Story</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="assets/original_hero.jpg" alt="She Can Foundation distribution drive in action" width="600" height="420" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Stats Banner --- -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3 class="stat-num" data-target="10000" data-suffix="+">0</h3>
+          <p>Girls Empowered</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-num" data-target="50" data-suffix="+">0</h3>
+          <p>Digital Initiatives</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-num" data-target="500" data-suffix="+">0</h3>
+          <p>Active Volunteers</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-num" data-target="100" data-suffix="%">0</h3>
+          <p>Youth Driven</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- About Section --- -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <img src="assets/original_about.jpg" alt="Underprivileged smiling child assisted by She Can Foundation" width="500" height="480" loading="lazy">
+        </div>
+        <div class="about-content">
+          <h2>Global Vision, Local Action</h2>
+          <p>
+            She Can Foundation is a youth-driven NGO dedicated to breaking barriers. We actively bridge the digital and educational gap for girls and students through practical skill-building, community drives, and continuous mentoring.
+          </p>
+          <p>
+            Our focus lies in fostering a supportive, expectation-free environment where passion matters more than prior experience. We help beginners take their very first steps in tech, leadership, and social contribution.
+          </p>
+          
+          <div class="about-features">
+            <div class="feature-box">
+              <h4>🎓 Equal Education</h4>
+              <p>Providing basic academic and creative learning resources to school girls.</p>
+            </div>
+            <div class="feature-box">
+              <h4>💻 Digital Literacy</h4>
+              <p>Hands-on coding classes, computer basics, and modern internet skills.</p>
+            </div>
+            <div class="feature-box">
+              <h4>🌸 Health & Hygiene</h4>
+              <p>Conducting sanitary awareness workshops and distribution campaigns.</p>
+            </div>
+            <div class="feature-box">
+              <h4>🤝 Youth Mentorship</h4>
+              <p>Creating community groups led by young changemakers for future careers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Testimonials Section --- -->
+  <section class="quote-section" id="testimonials">
+    <div class="container">
+      <div class="slider-container">
+        <div class="quote-slide active">
+          <div class="quote-icon">“</div>
+          <p class="quote-text">
+            Together, we can break down barriers and empower women. At She Can Foundation, we believe that if we all do our part, there is no challenge too great to overcome. Join us in our mission to create a world where every woman has the opportunity to thrive and succeed.
+          </p>
+          <div class="quote-author">Reeta Mishra</div>
+          <div class="quote-author-title">Founder & President, She Can Foundation</div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-icon">“</div>
+          <p class="quote-text">
+            Developing digital platforms for She Can Foundation allowed me to combine tech skills with social good. The selection process is creative, encouraging, and supports growth.
+          </p>
+          <div class="quote-author">Kushagra Sharma</div>
+          <div class="quote-author-title">Web Development Lead Applicant</div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-icon">“</div>
+          <p class="quote-text">
+            Teaching coding clinics to underprivileged girls is life-changing. Watching their faces light up as they build their first html page is the best reward possible.
+          </p>
+          <div class="quote-author">Ananya Sen</div>
+          <div class="quote-author-title">Volunteer Mentor, Delhi Chapter</div>
+        </div>
+        
+        <!-- Slider controls -->
+        <div class="slider-controls">
+          <button class="slider-btn prev-btn" aria-label="Previous quote">&#8592;</button>
+          <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+          <button class="slider-btn next-btn" aria-label="Next quote">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- On-ground Activity Showcase Section --- -->
+  <section class="activity-section" id="impact">
+    <div class="container">
+      <div class="activity-grid">
+        <div class="activity-content">
+          <h2>Impact in Action</h2>
+          <p>
+            Education is not confined to the walls of a classroom. Our volunteer teams organize local study groups, open-air learning clinics, and software orientation drives to bring basic tech literacy directly to the streets and communities.
+          </p>
+          <p>
+            By sharing our skills and coding backgrounds, we show children that there is a wider digital world open to them, sparking curiosity and providing resources to build their first HTML templates.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="#join" class="btn btn-primary">Join as a Mentor</a>
+          </div>
+        </div>
+        <div class="activity-image-wrapper">
+          <img src="assets/original_activity.png" alt="She Can Foundation volunteer teaching street children in India" width="500" height="480" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Initiatives Section --- -->
+  <section class="initiatives-section" id="initiatives">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>What We Do</h2>
+        <p style="max-width: 600px; margin: 1rem auto 0 auto;">Through regular campaigns and student volunteer drives, we tackle crucial issues on the ground.</p>
+      </div>
+      
+      <div class="initiatives-grid">
+        <!-- Card 1 -->
+        <div class="initiative-card">
+          <div class="card-icon">📚</div>
+          <h3>Education For All</h3>
+          <p>We organize local tutoring circles, distribute stationery packages, and encourage young children to continue active schooling without financial stress.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="initiative-card accent-card">
+          <div class="card-icon">💻</div>
+          <h3>Digital Classrooms</h3>
+          <p>We run beginner-friendly web workshops and digital orientation programs, providing computer hardware access to under-resourced schools.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="initiative-card">
+          <div class="card-icon">🩺</div>
+          <h3>Menstrual Hygiene Drives</h3>
+          <p>We spread vital sanitary awareness, distribute free menstrual products, and run educational seminars to bust local myths and taboos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FAQ Section --- -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Frequently Asked Questions</h2>
+        <p style="max-width: 600px; margin: 1rem auto 0 auto;">Everything you need to know about the internship, volunteering, and selection task.</p>
+      </div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-trigger">What is the selection process for the Web Dev Internship? <span>+</span></button>
+          <div class="faq-content">
+            <p>Our selection process is designed to encourage passionate beginners. It involves completing a simple, frontend-only task to showcase your CSS/JS layout capability, styling fidelity, and attention to detail. We prioritize enthusiasm and raw potential over years of experience.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger">Is She Can Foundation government registered? <span>+</span></button>
+          <div class="faq-content">
+            <p>Yes, She Can Foundation is registered under the Indian Society Act XXI of 1860 (Registration No. KAP/00504/2023-2024). You can check our official certificate in detail on our Certificate page.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger">Can I volunteer remotely? <span>+</span></button>
+          <div class="faq-content">
+            <p>Yes! We have both remote opportunities (such as web development, design, content creation) and on-ground drives (sanitary pad distributions, street teaching clinics). You can apply using the Volunteer Form above.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger">Where do my donations go? <span>+</span></button>
+          <div class="faq-content">
+            <p>Every donation directly funds our raw materials for sanitary pad kits and basic digital classroom hardware. We maintain a 100% transparent audit flow, which you can review on our transparent donate page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Contact / Join Section --- -->
+  <section class="join-section" id="join">
+    <div class="container">
+      <div class="join-section-header text-center" style="margin-bottom: 3.5rem;">
+        <h2>Support Our Mission</h2>
+        <p style="max-width: 600px; margin: 1rem auto 0 auto;">Join hands with She Can Foundation. You can support our work either by volunteering your skills or making a direct donation.</p>
+      </div>
+      
+      <div class="join-grid">
+        <!-- Column 1: Volunteer Form -->
+        <div class="form-card">
+          <h3>Volunteer Application</h3>
+          
+          <!-- Success banner -->
+          <div class="success-msg" id="form-success">
+            Form Submitted Successfully! 🎉 We'll get back to you soon.
+          </div>
+          
+          <form id="contact-form" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="user-name" class="form-label">Full Name *</label>
+              <input type="text" id="user-name" name="name" class="form-control" placeholder="Kushagra Sharma" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-email" class="form-label">Active Email Address *</label>
+              <input type="email" id="user-email" name="email" class="form-control" placeholder="kushsh007@gmail.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-message" class="form-label">Your Message *</label>
+              <textarea id="user-message" name="message" class="form-control" placeholder="Why would you like to join the She Can Foundation team?" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Submit Application</button>
+          </form>
+        </div>
+
+        <!-- Column 2: Donation Column -->
+        <div class="form-card" style="text-align: center;">
+          <h3>Direct Donation</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem; text-align: left;">
+            Your contribution provides girls with sanitary pads and digital education. Scan the QR code below to donate directly.
+          </p>
+          
+          <div style="margin: 1.5rem 0;">
+            <img src="assets/razorpay_upi_qr.jpg" alt="Razorpay UPI QR Scanner" style="max-width: 170px; margin: 0 auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: block;">
+            <p style="font-size: 0.85rem; font-weight: 700; margin-top: 0.5rem; color: var(--text-main);">
+              Scan & Pay with GPay, PhonePe, Paytm, or BHIM
+            </p>
+          </div>
+          
+          <div style="margin-top: 1.5rem; text-align: left; padding: 1.25rem; background-color: var(--bg-dark-deep); border-radius: 8px; border: 1px dashed rgba(255, 255, 255, 0.15);">
+            <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--white);">🌸 Donation Tiers:</p>
+            <p style="font-size: 0.85rem; margin: 0 0 0.25rem 0; color: rgba(255, 255, 255, 0.8);">• <strong>₹500</strong>: Supports 5 girls for 1 month</p>
+            <p style="font-size: 0.85rem; margin: 0 0 0.25rem 0; color: rgba(255, 255, 255, 0.8);">• <strong>₹1,500</strong>: Supports 15 girls for 3 months</p>
+            <p style="font-size: 0.85rem; margin: 0; color: rgba(255, 255, 255, 0.8);">• <strong>₹5,000</strong>: Keeps 25 girls safe in school</p>
+          </div>
+
+          <!-- Impact Range Slider -->
+          <div style="margin-top: 1.5rem; text-align: left;">
+            <label for="direct-amount-slider" class="form-label" style="font-size: 0.85rem; font-weight: 700; color: rgba(255, 255, 255, 0.9);">
+              🌸 Impact Calculator: <span id="direct-slider-val" style="color: var(--primary-color);">₹1500</span>
+            </label>
+            <input type="range" id="direct-amount-slider" min="300" max="10000" step="100" value="1500" style="width: 100%; accent-color: var(--primary-color); cursor: pointer; margin-bottom: 0.5rem;">
+            <p id="direct-impact-desc" style="font-size: 0.8rem; font-style: italic; color: rgba(255, 255, 255, 0.7); margin: 0;">💡 This will provide 15 girls with sanitary pads for 1 month!</p>
+          </div>
+          
+          <a href="donate.html" class="btn btn-secondary" style="width: 100%; border-radius: 8px; margin-top: 1.5rem; font-size: 0.95rem;">More Donation Options</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Footer --- -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <img src="assets/logo.jpg" alt="She Can Foundation Logo" style="height: 38px; width: 38px; border-radius: 50%;"> She Can Foundation
+          </h3>
+          <p>
+            A registered youth-driven NGO working towards creating opportunities, awareness, and positive social impact through education, digital initiatives, and community programs.
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/shecanfoundation.ngo/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow us on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/shecanfoundation" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Connect on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="certificate.html">Certificate</a></li>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="#join">Volunteer Form</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Internship Task</h4>
+          <ul>
+            <li><strong>Role:</strong> Web Development</li>
+            <li><strong>Applicant:</strong> Kushagra Sharma</li>
+            <li><strong>Timeline:</strong> 3 Days</li>
+            <li><strong>Status:</strong> Completed</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 She Can Foundation. NGO Registered Under the Indian Society Act, 1860.</p>
+        <p>Selection Task Repository submission by Kushagra Sharma.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script link -->
+  <script src="script.js"></script>
+</body>
+</html>
