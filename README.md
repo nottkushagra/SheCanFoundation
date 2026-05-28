@@ -8,7 +8,8 @@ The website highlights the NGO’s core mission of creating educational, digital
 
 ## 🚀 Live Demo & Repository Details
 
-* **Repository Name**: `she-can-foundation-web`
+* **Live Website**: [https://nottkushagra.github.io/SheCanFoundation/](https://nottkushagra.github.io/SheCanFoundation/)
+* **Repository Name**: `SheCanFoundation`
 * **Short GitHub Description**:
   > An interactive, premium, and fully responsive landing page built for She Can Foundation's Web Development selection task. Features a modern UI, native dark mode toggle, smooth micro-animations, and dynamic volunteer onboarding. Built with HTML5, CSS3, and Vanilla JavaScript.
 
