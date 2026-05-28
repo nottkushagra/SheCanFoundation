@@ -1,55 +1,35 @@
-/* 
-  =========================================
-  SHE CAN FOUNDATION - SELECTION TASK STYLES
-  =========================================
-  Clean, modern, and basic CSS.
-  Directly inspired by shecanfoundation.org:
-  - Typography: Poppins & DM Sans
-  - Brand Colors: Royal Purple (#673de6) & Logo Orange-Red (#ff4d15)
-  - Section Backgrounds: Alternating Dark Charcoal (#26201e), Lavender-Gray (#ebebef), and White (#ffffff)
-*/
-
-/* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-/* --- Design Tokens / Variables --- */
 :root {
-  /* Color Scheme - shecanfoundation.org original branding */
-  --primary-color: #ed0707;       /* Original brand highlight/button color (bright red) */
+  --primary-color: #ed0707;
   --primary-hover: #c90505;
-  --secondary-color: #673de6;     /* Royal Purple (Logo color) */
+  --secondary-color: #673de6;
   --secondary-hover: #5025d1;
-  --text-main: #1d1e20;           /* Off-black body text */
-  --text-muted: #727586;          /* Muted gray text */
-  --bg-main: #ffffff;             
-  --bg-subtle: #ebebef;           /* Original light gray background block (rgb(235, 235, 239)) */
-  --bg-dark: #26201e;             /* Original dark background banner (rgb(38, 32, 30)) */
-  --bg-dark-deep: #0d0705;        /* Original very dark background (rgb(13, 7, 5)) */
+  --text-main: #1d1e20;
+  --text-muted: #727586;
+  --bg-main: #ffffff;
+  --bg-subtle: #ebebef;
+  --bg-dark: #26201e;
+  --bg-dark-deep: #0d0705;
   --white: #ffffff;
-  --border-color: #dadce0;        
-  
-  /* Shadow Effects */
+  --border-color: #dadce0;
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
-  
-  /* Layout spacing */
   --border-radius: 12px;
   --transition-speed: 0.3s;
 }
 
-/* --- Dark Theme Tokens --- */
 [data-theme="dark"] {
   --text-main: #f2f3f6;
   --text-muted: #9ca3af;
-  --bg-main: #0f172a;             /* Slate dark background */
-  --bg-subtle: #1e293b;           /* Slate lighter background */
+  --bg-main: #0f172a;
+  --bg-subtle: #1e293b;
   --border-color: #334155;
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Base Resets --- */
 * {
   margin: 0;
   padding: 0;
@@ -80,7 +60,6 @@ a {
   color: inherit;
 }
 
-/* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -99,7 +78,6 @@ h2 {
   display: inline-block;
 }
 
-/* Elegant decorative line under main headings */
 h2::after {
   content: '';
   position: absolute;
@@ -117,7 +95,6 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* --- Helper Classes / Utilities --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -176,14 +153,13 @@ p {
   background-color: rgba(103, 61, 230, 0.05);
 }
 
-/* --- Header & Navigation --- */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(38, 32, 30, 0.95); /* Transparent original dark charcoal */
+  background-color: rgba(38, 32, 30, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -196,7 +172,7 @@ header {
 
 header.scrolled {
   box-shadow: var(--shadow-sm);
-  background-color: rgb(38, 32, 30); /* Solid original dark charcoal */
+  background-color: rgb(38, 32, 30);
 }
 
 .nav-wrapper {
@@ -209,7 +185,7 @@ header.scrolled {
 .logo {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #ffffff; /* White logo text for high-contrast on dark header */
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -235,13 +211,13 @@ header.scrolled {
 .nav-link {
   font-weight: 600;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85); /* Readable light text on dark header */
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition-speed);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary-color); /* Hover / active red */
+  color: var(--primary-color);
 }
 
 .nav-actions {
@@ -250,7 +226,6 @@ header.scrolled {
   gap: 1rem;
 }
 
-/* Theme Toggle Button */
 .theme-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -261,7 +236,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff; /* White icon */
+  color: #ffffff;
   transition: all var(--transition-speed);
 }
 
@@ -270,23 +245,11 @@ header.scrolled {
   border-color: var(--primary-color);
 }
 
-.theme-btn .sun-icon {
-  display: none;
-}
+.theme-btn .sun-icon { display: none; }
+.theme-btn .moon-icon { display: block; }
+[data-theme="dark"] .theme-btn .sun-icon { display: block; }
+[data-theme="dark"] .theme-btn .moon-icon { display: none; }
 
-.theme-btn .moon-icon {
-  display: block;
-}
-
-[data-theme="dark"] .theme-btn .sun-icon {
-  display: block;
-}
-
-[data-theme="dark"] .theme-btn .moon-icon {
-  display: none;
-}
-
-/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -306,25 +269,16 @@ header.scrolled {
   transition: all var(--transition-speed);
 }
 
-/* --- Hero Section --- */
 .hero-section {
   padding: 160px 0 100px 0;
-  background-color: var(--bg-dark); /* Original Dark Charcoal background */
+  background-color: var(--bg-dark);
   color: var(--white);
   border-bottom: 1px solid #332d2b;
 }
 
-.hero-section h1 {
-  color: var(--white);
-}
-
-.hero-section h1 span {
-  color: var(--secondary-color);
-}
-
-.hero-section p {
-  color: #d1d5db; /* Light gray body text */
-}
+.hero-section h1 { color: var(--white); }
+.hero-section h1 span { color: var(--secondary-color); }
+.hero-section p { color: #d1d5db; }
 
 .hero-section .btn-outline {
   border-color: #4b5563;
@@ -343,13 +297,8 @@ header.scrolled {
   gap: 4rem;
 }
 
-.hero-content h1 {
-  margin-bottom: 1.5rem;
-}
-
-.hero-content p {
-  margin-bottom: 2rem;
-}
+.hero-content h1 { margin-bottom: 1.5rem; }
+.hero-content p { margin-bottom: 2rem; }
 
 .hero-buttons {
   display: flex;
@@ -372,9 +321,8 @@ header.scrolled {
   border: 4px solid rgba(255, 255, 255, 0.15);
 }
 
-/* --- Stats / Impact Bar --- */
 .stats-section {
-  background-color: var(--bg-main); /* White divider section */
+  background-color: var(--bg-main);
   padding: 3.5rem 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -385,9 +333,7 @@ header.scrolled {
   gap: 2rem;
 }
 
-.stat-card {
-  text-align: center;
-}
+.stat-card { text-align: center; }
 
 .stat-card h3 {
   font-size: 2.25rem;
@@ -402,10 +348,9 @@ header.scrolled {
   font-size: 0.95rem;
 }
 
-/* --- About Section --- */
 .about-section {
   padding: 100px 0;
-  background-color: var(--bg-subtle); /* Original light lavender-gray background */
+  background-color: var(--bg-subtle);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -424,9 +369,7 @@ header.scrolled {
   object-fit: cover;
 }
 
-.about-content h2 {
-  margin-bottom: 2rem;
-}
+.about-content h2 { margin-bottom: 2rem; }
 
 .about-features {
   display: grid;
@@ -436,7 +379,7 @@ header.scrolled {
 }
 
 .feature-box {
-  background-color: var(--bg-main); /* White boxes on gray background */
+  background-color: var(--bg-main);
   padding: 1.25rem;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
@@ -454,9 +397,8 @@ header.scrolled {
   margin: 0;
 }
 
-/* --- Founder Quote Section --- */
 .quote-section {
-  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-deep)); /* Original Dark Quote block */
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-deep));
   color: var(--white);
   padding: 80px 0;
 }
@@ -499,10 +441,9 @@ header.scrolled {
   margin-top: 0.25rem;
 }
 
-/* --- On-ground Activity Showcase Section --- */
 .activity-section {
   padding: 100px 0;
-  background-color: var(--bg-main); /* White background section */
+  background-color: var(--bg-main);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -513,9 +454,7 @@ header.scrolled {
   gap: 4rem;
 }
 
-.activity-content h2 {
-  margin-bottom: 1.5rem;
-}
+.activity-content h2 { margin-bottom: 1.5rem; }
 
 .activity-image-wrapper img {
   border-radius: 20px;
@@ -525,16 +464,13 @@ header.scrolled {
   object-fit: cover;
 }
 
-/* --- Initiatives Section --- */
 .initiatives-section {
   padding: 100px 0;
-  background-color: var(--bg-subtle); /* Original light lavender-gray background */
+  background-color: var(--bg-subtle);
   border-bottom: 1px solid var(--border-color);
 }
 
-.section-header {
-  margin-bottom: 4rem;
-}
+.section-header { margin-bottom: 4rem; }
 
 .initiatives-grid {
   display: grid;
@@ -543,7 +479,7 @@ header.scrolled {
 }
 
 .initiative-card {
-  background-color: var(--bg-main); /* White cards on gray section */
+  background-color: var(--bg-main);
   padding: 2.5rem 2rem;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
@@ -585,36 +521,26 @@ header.scrolled {
   margin: 0;
 }
 
-/* --- Join/Contact Section --- */
 .join-section {
   padding: 100px 0;
-  background-color: var(--bg-dark-deep); /* Dark background to match original */
+  background-color: var(--bg-dark-deep);
   color: var(--white);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.join-section-header {
-  margin-bottom: 3.5rem;
-}
-
-.join-section-header h2 {
-  color: var(--white);
-}
-
-.join-section-header p {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
+.join-section-header { margin-bottom: 3.5rem; }
+.join-section-header h2 { color: var(--white); }
+.join-section-header p { color: rgba(255, 255, 255, 0.8) !important; }
 
 .join-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* Left: Volunteer Form, Right: Donation Column */
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 3.5rem;
   align-items: start;
 }
 
-/* Form Styling */
 .form-card {
-  background-color: var(--bg-dark); /* Midnight purple card background on dark section */
+  background-color: var(--bg-dark);
   padding: 3rem 2.5rem;
   border-radius: var(--border-radius);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -627,13 +553,9 @@ header.scrolled {
   color: var(--white);
 }
 
-.form-card p {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
+.form-card p { color: rgba(255, 255, 255, 0.8) !important; }
 
-.join-section .form-label {
-  color: rgba(255, 255, 255, 0.9);
-}
+.join-section .form-label { color: rgba(255, 255, 255, 0.9); }
 
 .join-section .form-control {
   background-color: var(--bg-dark-deep);
@@ -651,17 +573,10 @@ header.scrolled {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.join-section .form-card div p {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
+.join-section .form-card div p { color: rgba(255, 255, 255, 0.9) !important; }
+.join-section .form-card div p strong { color: var(--white) !important; }
 
-.join-section .form-card div p strong {
-  color: var(--white) !important;
-}
-
-.form-group {
-  margin-bottom: 1.25rem;
-}
+.form-group { margin-bottom: 1.25rem; }
 
 .form-label {
   display: block;
@@ -695,7 +610,6 @@ textarea.form-control {
   min-height: 120px;
 }
 
-/* Success Message Overlay style */
 .success-msg {
   display: none;
   background-color: #d1fae5;
@@ -714,9 +628,8 @@ textarea.form-control {
   color: #a7f3d0;
 }
 
-/* --- Footer --- */
 footer {
-  background-color: var(--bg-main); /* Original white footer background */
+  background-color: var(--bg-main);
   padding: 5rem 0 2rem 0;
   border-top: 1px solid var(--border-color);
 }
@@ -768,13 +681,8 @@ footer {
   color: var(--text-main);
 }
 
-.footer-links ul {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 0.75rem; }
 
 .footer-links a {
   font-size: 0.95rem;
@@ -782,9 +690,7 @@ footer {
   transition: color var(--transition-speed);
 }
 
-.footer-links a:hover {
-  color: var(--primary-color);
-}
+.footer-links a:hover { color: var(--primary-color); }
 
 .footer-bottom {
   border-top: 1px solid var(--border-color);
@@ -801,8 +707,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- Responsive Media Queries --- */
-
 @media (max-width: 992px) {
   .hero-grid,
   .about-grid,
@@ -811,11 +715,9 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
-  .hero-image-wrapper {
-    order: -1;
-  }
-  
+
+  .hero-image-wrapper { order: -1; }
+
   .hero-image-wrapper img,
   .about-image-wrapper img,
   .activity-image-wrapper img {
@@ -823,18 +725,14 @@ footer {
     width: 100%;
   }
 
-  .initiatives-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  
+  .initiatives-grid { grid-template-columns: 1fr 1fr; }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
-  
-  .footer-about {
-    grid-column: span 2;
-  }
+
+  .footer-about { grid-column: span 2; }
 }
 
 @media (max-width: 768px) {
@@ -844,7 +742,7 @@ footer {
     left: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: #26201e; /* Same dark charcoal as header */
+    background-color: #26201e;
     flex-direction: column;
     padding: 3rem 1.5rem;
     gap: 2rem;
@@ -853,73 +751,43 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-md);
   }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .menu-toggle {
-    display: flex;
-  }
-  
-  /* Menu Hamburger Animation */
+
+  .nav-menu.active { left: 0; }
+  .menu-toggle { display: flex; }
+
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
-  
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
+
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+
   .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
-  
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .about-features {
-    grid-template-columns: 1fr;
-  }
 
-  .initiatives-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .form-card {
-    padding: 2rem 1.5rem;
-  }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .about-features { grid-template-columns: 1fr; }
+  .initiatives-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 2rem 1.5rem; }
 }
 
 @media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-about {
-    grid-column: span 1;
-  }
-  
+  .stats-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-about { grid-column: span 1; }
+
   .hero-buttons {
     flex-direction: column;
   }
-  
-  .hero-buttons .btn {
-    width: 100%;
-  }
-  
+
+  .hero-buttons .btn { width: 100%; }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
   }
 }
 
-/* --- Interactive Testimonial Slider Styles --- */
 .slider-container {
   position: relative;
   max-width: 850px;
@@ -992,7 +860,6 @@ footer {
   transform: scale(1.2);
 }
 
-/* --- Interactive FAQ Accordion Styles --- */
 .faq-section {
   padding: 100px 0;
   background-color: var(--bg-main);
@@ -1062,7 +929,6 @@ footer {
   padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
-/* --- Toast / Confetti Animations --- */
 .confetti-piece {
   position: fixed;
   width: 10px;
@@ -1081,7 +947,6 @@ footer {
   }
 }
 
-/* --- Scroll Reveal Animations --- */
 @media (prefers-reduced-motion: no-preference) {
   .scroll-reveal {
     opacity: 0;
@@ -1094,4 +959,3 @@ footer {
     transform: translateY(0);
   }
 }
-
