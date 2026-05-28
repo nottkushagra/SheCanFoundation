@@ -1,10 +1,4 @@
-/**
- * She Can Foundation - Selection Task JS Interactions
- * Simple, clean, interactive, and vanilla JavaScript.
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  // === DOM ELEMENTS ===
   const header = document.getElementById("header");
   const themeToggleBtn = document.getElementById("theme-toggle");
   const menuToggle = document.getElementById("menu-toggle");
@@ -13,17 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contact-form");
   const formSuccess = document.getElementById("form-success");
 
-  // ==========================================
-  // 1. THEME SWITCHER (Light / Dark Mode)
-  // ==========================================
+  // Theme Switcher
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
-    let newTheme = "light";
-    
-    if (currentTheme === "light") {
-      newTheme = "dark";
-    }
-    
+    let newTheme = currentTheme === "light" ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   };
@@ -32,9 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggleBtn.addEventListener("click", toggleTheme);
   }
 
-  // ==========================================
-  // 2. MOBILE MENU NAVIGATION
-  // ==========================================
+  // Mobile Menu
   const toggleMobileMenu = () => {
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
@@ -49,14 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", toggleMobileMenu);
   }
 
-  // Close menu when clicking on any nav link
   navLinks.forEach(link => {
     link.addEventListener("click", closeMobileMenu);
   });
 
-  // ==========================================
-  // 3. STICKY HEADER EFFECT & ACTIVE LINKS
-  // ==========================================
+  // Sticky Header & Active Links
   const handleScroll = () => {
     if (window.scrollY > 30) {
       header.classList.add("scrolled");
@@ -66,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", handleScroll);
-  handleScroll(); // Initial check
+  handleScroll();
 
   const sections = document.querySelectorAll("section");
   const updateActiveLink = () => {
-    let scrollPos = window.scrollY + 100; // Offset for header height
+    let scrollPos = window.scrollY + 100;
 
     sections.forEach(section => {
       const id = section.getAttribute("id");
@@ -88,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", updateActiveLink);
 
-  // ==========================================
-  // 4. CONFETTI BURST EFFECT
-  // ==========================================
+  // Confetti Effect
   const triggerConfetti = () => {
     const colors = ["#ed0707", "#673de6", "#ffcd35", "#00b090", "#357df9"];
     for (let i = 0; i < 45; i++) {
@@ -103,15 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
       piece.style.animationDelay = Math.random() * 0.4 + "s";
       piece.style.animationDuration = Math.random() * 1.5 + 1.2 + "s";
       document.body.appendChild(piece);
-      
-      // Remove piece after animation completes
       setTimeout(() => piece.remove(), 2500);
     }
   };
 
-  // ==========================================
-  // 5. INTERACTIVE FORM VALIDATION & CONFETTI
-  // ==========================================
+  // Contact Form Validation
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -140,12 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isValid) {
         formSuccess.style.display = "block";
         formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-        // Trigger confetti!
         triggerConfetti();
-
         contactForm.reset();
-
         setTimeout(() => {
           formSuccess.style.display = "none";
         }, 5000);
@@ -162,15 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================================
-  // 6. DYNAMIC STATS COUNT-UP OBSERVER
-  // ==========================================
+  // Stats Count-Up
   const stats = document.querySelectorAll(".stat-num");
   const countUp = (element) => {
     const target = +element.getAttribute("data-target");
     const suffix = element.getAttribute("data-suffix") || "";
-    const speed = 200; // lower is faster
-    const increment = target / speed;
+    const increment = target / 200;
 
     let current = 0;
     const updateNumber = () => {
@@ -196,9 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   stats.forEach(stat => statsObserver.observe(stat));
 
-  // ==========================================
-  // 7. TESTIMONIAL SLIDER CAROUSEL
-  // ==========================================
+  // Testimonial Slider
   const slides = document.querySelectorAll(".quote-slide");
   const dots = document.querySelectorAll(".dot");
   const prevBtn = document.querySelector(".prev-btn");
@@ -230,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.addEventListener("click", () => showSlide(idx));
     });
 
-    // Auto rotate quotes every 7 seconds
     setInterval(() => {
       let idx = currentSlide + 1;
       if (idx >= slides.length) idx = 0;
@@ -238,16 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 7000);
   }
 
-  // ==========================================
-  // 8. INTERACTIVE FAQ ACCORDION
-  // ==========================================
+  // FAQ Accordion
   const faqTriggers = document.querySelectorAll(".faq-trigger");
   faqTriggers.forEach(trigger => {
     trigger.addEventListener("click", () => {
       const item = trigger.parentElement;
       const isActive = item.classList.contains("active");
-      
-      // Close other accordion blocks
+
       document.querySelectorAll(".faq-item").forEach(i => {
         i.classList.remove("active");
         const span = i.querySelector(".faq-trigger span");
@@ -262,9 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================================
-  // 9. DYNAMIC IMPACT RANGE SLIDER (Calculator)
-  // ==========================================
+  // Impact Range Slider
   const directSlider = document.getElementById("direct-amount-slider");
   const directValText = document.getElementById("direct-slider-val");
   const directImpactText = document.getElementById("direct-impact-desc");
@@ -284,18 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCalculator(e.target.value);
     });
 
-    // Initial setup
     updateCalculator(directSlider.value);
   }
 
-  // ==========================================
-  // 10. SCROLL REVEAL ANIMATIONS (Fade In)
-  // ==========================================
-  // Assign classes dynamically for clean HTML
+  // Scroll Reveal Animations
   const revealElements = document.querySelectorAll(
     ".hero-content, .hero-image-wrapper, .stat-card, .about-image-wrapper, .about-content, .feature-box, .activity-content, .activity-image-wrapper, .initiative-card, .faq-item, .form-card"
   );
-  
+
   revealElements.forEach(el => el.classList.add("scroll-reveal"));
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -309,9 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // ==========================================
-  // 11. DONATION PAGE INTERACTIONS & CONFETTI
-  // ==========================================
+  // Donation Page Interactions
   const tierCards = document.querySelectorAll(".tier-card");
   const donorAmountInput = document.getElementById("donor-amount");
   const donationForm = document.getElementById("donation-form");
@@ -335,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (donationForm) {
     donationForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      
+
       const donorName = document.getElementById("donor-name");
       const donorEmail = document.getElementById("donor-email");
       const donorAmount = document.getElementById("donor-amount");
@@ -360,13 +315,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isValid) {
         paymentSuccess.style.display = "block";
         paymentSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        
-        // Trigger confetti explosion!
         triggerConfetti();
-
         donationForm.reset();
         tierCards.forEach(c => c.classList.remove("selected"));
-
         setTimeout(() => {
           paymentSuccess.style.display = "none";
         }, 6000);
@@ -383,9 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================================
-  // 12. CERTIFICATE IMAGE ZOOM MODAL
-  // ==========================================
+  // Certificate Image Zoom Modal
   const certImg = document.getElementById("cert-img");
   const zoomModal = document.getElementById("zoom-modal");
 
