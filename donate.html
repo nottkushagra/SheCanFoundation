@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate to She Can Foundation | Support a Worthy Cause</title>
-  
-  <!-- Prevent styling flashes in dark mode (FOUC) -->
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
   <script>
@@ -19,12 +17,9 @@
       }
     })();
   </script>
-
-  <!-- Style link -->
   <link rel="stylesheet" href="style.css">
   
   <style>
-    /* Specific overrides for the Donate page layout */
     .donate-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -33,9 +28,7 @@
       align-items: start;
     }
     
-    .donate-content h1 span {
-      color: var(--secondary-color);
-    }
+    .donate-content h1 span { color: var(--secondary-color); }
     
     .truth-box {
       background-color: var(--bg-subtle);
@@ -136,30 +129,23 @@
         grid-template-columns: 1fr;
         gap: 3rem;
       }
-      .payment-card {
-        position: static;
-      }
+      .payment-card { position: static; }
     }
     
     @media (max-width: 576px) {
-      .tier-grid {
-        grid-template-columns: 1fr;
-      }
+      .tier-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- --- Header / Navigation --- -->
   <header id="header">
     <div class="container">
       <div class="nav-wrapper">
-        <!-- Logo -->
         <a href="index.html" class="logo" aria-label="She Can Foundation Home">
           <img src="assets/logo.jpg" alt="She Can Foundation Logo"> She Can Foundation
         </a>
         
-        <!-- Navigation Links -->
         <nav>
           <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html#home" class="nav-link">Home</a></li>
@@ -172,7 +158,6 @@
           </ul>
         </nav>
 
-        <!-- Right Header Actions (Toggle & CTA) -->
         <div class="nav-actions">
           <button class="theme-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
             <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -186,7 +171,6 @@
           
           <a href="#payment-section" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Donate Now</a>
           
-          <!-- Mobile Menu Burger -->
           <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu">
             <span></span>
             <span></span>
@@ -197,10 +181,8 @@
     </div>
   </header>
 
-  <!-- --- Donate Page Main Content --- -->
   <main class="container">
     <div class="donate-grid">
-      <!-- Left side: Emotional story & tiers -->
       <div class="donate-content">
         <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--secondary-color); font-size: 0.85rem; margin-bottom: 0.5rem;">
           SUPPORT A WORTHY CAUSE
@@ -211,7 +193,7 @@
           Dear Donor,
         </p>
         <p>
-          Every month, a 13-year-old girl in a small village is forced to miss five days of school. Not because she doesn’t want to learn. Not because she is lazy. But because she cannot afford something as basic as a sanitary pad.
+          Every month, a 13-year-old girl in a small village is forced to miss five days of school. Not because she doesn't want to learn. Not because she is lazy. But because she cannot afford something as basic as a sanitary pad.
         </p>
         <p>
           She hides at home in shame. She uses rags, newspapers, even sand — risking her health and her dignity. Slowly, her dreams of education, freedom, and self-respect begin to fade.
@@ -260,16 +242,13 @@
         </div>
       </div>
 
-      <!-- Right side: Payment QR & Form -->
       <div class="payment-card" id="payment-section">
-        <!-- QR Code scanning -->
         <div class="qr-container">
           <img src="assets/razorpay_upi_qr.jpg" alt="Razorpay UPI QR Scanner for She Can Foundation">
           <p>Scan to Pay with Any UPI App</p>
           <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">GPay, PhonePe, Paytm, BHIM</p>
         </div>
 
-        <!-- Custom Donation form -->
         <h3>Donation Form</h3>
         <div class="success-msg" id="payment-success">
           Donation Completed Successfully! 🌟 A tax receipt will be sent to your email shortly. Thank you!
@@ -294,7 +273,6 @@
     </div>
   </main>
 
-  <!-- --- Footer --- -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -306,7 +284,7 @@
             A registered youth-driven NGO working towards creating opportunities, awareness, and positive social impact through education, digital initiatives, and community programs.
           </p>
           <div class="social-links">
-            <a href="https://www.instagram.com/_shecanfoundation_" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow us on Instagram">
+            <a href="https://www.instagram.com/shecanfoundation.ngo/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow us on Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/>
@@ -351,7 +329,6 @@
     </div>
   </footer>
 
-  <!-- Script link -->
   <script src="script.js"></script>
 </body>
 </html>
